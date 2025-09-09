@@ -19,7 +19,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 # --------------------------------------------------------------
-# Step 2: Define tools
+# Step 1: Define tools
 # --------------------------------------------------------------
 
 @function_tool
@@ -60,7 +60,7 @@ content_writer_agent = Agent(
 
 
 # --------------------------------------------------------------
-# Step 3: Download and transcribe function
+# Step 2: Download and transcribe function
 # --------------------------------------------------------------
 
 def download_tiktok_audio(url: str) -> str:
@@ -145,7 +145,7 @@ evaluator = Agent[None](
 
 
 # --------------------------------------------------------------
-# Step 5: Define the storage agent (NOTION)
+# Step 3: Define the storage agent (NOTION)
 # --------------------------------------------------------------
 
 
@@ -249,7 +249,7 @@ content_storage_agent = Agent(
 
 
 # --------------------------------------------------------------
-# Step 6: Define the content scheduling agent
+# Step 4: Define the content scheduling agent
 # --------------------------------------------------------------
 
 # Authenticate Google Calendar API
@@ -333,7 +333,7 @@ content_scheduling_agent = Agent(
 
 
 # --------------------------------------------------------------
-# Step 7: Main Workflow Function
+# Step 5: Main Workflow Function
 # --------------------------------------------------------------
 
 async def main():
